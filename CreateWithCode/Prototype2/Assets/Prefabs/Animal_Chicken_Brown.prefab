@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7448896183456333674}
   - component: {fileID: -4381747890274611305}
   - component: {fileID: -522765980319233990}
+  - component: {fileID: 7859163469004119240}
   m_Layer: 0
   m_Name: Animal_Chicken_Brown
   m_TagString: Untagged
@@ -207,6 +208,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1c03d5fcd68fe4cb8f27a1e946439b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7859163469004119240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448896183448981160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 15.359694, z: 10}
+  m_Center: {x: -0, y: 8.7519455, z: 0}
 --- !u!1 &7448896183448984262
 GameObject:
   m_ObjectHideFlags: 0
