@@ -23,6 +23,18 @@ public class PlayerController : MonoBehaviour
          playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
          isOnGround = false;
       }  
+      
+      if(Input.GetKeyDown(KeyCode.W))
+      {
+         playerRb.AddForce(Vector3.right * 10, ForceMode.Impulse);
+         
+      } 
+
+      if(Input.GetKeyDown(KeyCode.S))
+      {
+         playerRb.AddForce(Vector3.left * 10, ForceMode.Impulse);
+         
+      }
     }
     private void OnCollisionEnter(Collision collision)
     {
