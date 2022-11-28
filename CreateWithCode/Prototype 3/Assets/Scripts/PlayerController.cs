@@ -30,11 +30,6 @@ public class PlayerController : MonoBehaviour
          
       } 
 
-      if(Input.GetKeyDown(KeyCode.S))
-      {
-         playerRb.AddForce(Vector3.left * 10, ForceMode.Impulse);
-         
-      }
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      invokeRepeating("SpawnObstacle", startDelay, repeatRate);
+      InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
       Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);  
     }
 
