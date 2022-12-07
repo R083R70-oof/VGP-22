@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
+    public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +28,13 @@ public class PlayerController : MonoBehaviour
          playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
          isOnGround = false;
          playerAnim.SetTrigger("Jump_trig");
+         dirtParticle.Stop();
       }  
       
-      if(Input.GetKeyDown(KeyCode.W))
+      if(Input.GetKeyDown(KeyCode.S))
       {
-         playerRb.AddForce(Vector3.right * 10, ForceMode.Impulse);
+         playerRb.AddForce(Vector3.down * 10, ForceMode.Impulse);
+         playerAnim.SetTrigger("Crouch_trig");
          
       } 
 
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
       gameOver = true;
       playerAnim.SetBool("Death_b", true);
       playerAnim.SetInteger("DeathType_int", 1);
+      explosionParticle.Play();
+      dirtParticle.Stop();
      }
     }
 }
