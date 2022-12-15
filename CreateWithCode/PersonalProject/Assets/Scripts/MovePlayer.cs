@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-  private float speed = 20.0f;
-    private float Speed = 50;
+  private float speed = 5.0f;
+    private float Speed = 10;
     private float horizontalInput;
     private float forwardInput;
      private Rigidbody playerRb;
@@ -25,19 +25,14 @@ public class MovePlayer : MonoBehaviour
       horizontalInput = Input.GetAxis("Horizontal");
       forwardInput = Input.GetAxis("Vertical");
       
-      if(Input.GetKeyDown(KeyCode.Space))
+      if (Input.GetKeyDown(KeyCode.Space))
       {
-         playerRb.AddForce(Vector3.left * 10, ForceMode.Impulse);
+         playerRb.AddForce(Vector3.up * 100, ForceMode.Impulse);
       }
 
       // we move the vehicle forward 
     transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
     // rotates the car based on horizontal Input
-    transform.Rotate(Vector3.left * horizontalInput * Time.deltaTime * Speed);
+    transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * Speed);
     }
-
-    if (Input.GetKeyDown(KeyCode.Space))
-       {
-        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-       }
 }
