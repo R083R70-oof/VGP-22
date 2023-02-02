@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float speed = 5000;
+    private float speed = 2000;
     private GameObject focalPoint;
 
     public bool hasPowerup;
