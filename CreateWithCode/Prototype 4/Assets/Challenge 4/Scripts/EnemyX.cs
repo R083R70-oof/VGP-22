@@ -15,7 +15,7 @@ public class EnemyX : MonoBehaviour
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player Goal");
         
-    spawnManagerXScript = GameObject.Find("Spawn Manager").GetComponent<spawnManagerX>();
+    spawnManagerXScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManagerX>();
     speed = spawnManagerXScript.enemySpeed;
     }   
 

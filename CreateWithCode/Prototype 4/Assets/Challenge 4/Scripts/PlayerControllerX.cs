@@ -35,7 +35,7 @@ public class PlayerControllerX : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRb AddForce(focalPoint.transform.forward * turboBoost, ForceMode.Impulse);
+            playerRb.AddForce(focalPoint.transform.forward * turboBoost, ForceMode.Impulse);
             turboSmoke.Play();
         }
     }
