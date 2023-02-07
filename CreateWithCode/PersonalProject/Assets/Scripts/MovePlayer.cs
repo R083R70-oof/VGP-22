@@ -27,7 +27,12 @@ public class MovePlayer : MonoBehaviour
       
       if (Input.GetKeyDown(KeyCode.Space))
       {
-         playerRb.AddForce(Vector3.up * 100, ForceMode.Impulse);
+         playerRb.AddForce(Vector3.up * 30, ForceMode.Impulse);
+      }
+
+       if (Input.GetKeyDown(KeyCode.E))
+      {
+         playerRb.AddForce(Vector3.forward * 50, ForceMode.Impulse);
       }
 
       // we move the vehicle forward 

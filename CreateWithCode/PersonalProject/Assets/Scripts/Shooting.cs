@@ -15,7 +15,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(KeyCode.Space))
+      if (Input.GetKeyDown(KeyCode.F))
        {
         Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
        }  
