@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-  private float speed = 5.0f;
+  private float speed = 10.0f;
     private float Speed = 10;
     private float horizontalInput;
     private float forwardInput;
@@ -27,7 +27,7 @@ public class MovePlayer : MonoBehaviour
       
       if (Input.GetKeyDown(KeyCode.Space))
       {
-         playerRb.AddForce(Vector3.up * 30, ForceMode.Impulse);
+         playerRb.AddForce(Vector3.up * 80, ForceMode.Impulse);
       }
 
        if (Input.GetKeyDown(KeyCode.E))
