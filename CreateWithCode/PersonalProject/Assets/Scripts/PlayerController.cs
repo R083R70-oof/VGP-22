@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-  private float speed = 10.0f;
+  private float speed = 20.0f;
     private float horizontalInput;
     private float forwardInput;
      private Rigidbody playerRb;
      public float gravityModifier;
-      public GameObject projectilePrefab;
-    private float turnSpeed = 50.0f;
 
 
     // Start is called before the first frame update
@@ -35,10 +33,9 @@ public class MovePlayer : MonoBehaviour
       {
          playerRb.AddForce(Vector3.forward * 50, ForceMode.Impulse);
       }
-
-      // we move the vehicle forward 
+ 
     transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-    // rotates the car based on horizontal Input
-    transform.Rotate(Vector3.up, turnSpeed * forwardInput * Time.deltaTime);
+
+transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
 }
