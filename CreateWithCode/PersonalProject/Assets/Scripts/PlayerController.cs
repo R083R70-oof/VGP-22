@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
        playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier; 
+       Physics.gravity *= gravityModifier; 
     }
 
     // Update is called once per frame
@@ -34,8 +34,25 @@ public class PlayerController : MonoBehaviour
          playerRb.AddForce(Vector3.forward * 50, ForceMode.Impulse);
       }
  
-    transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+   
+      transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
 
-transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+      transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
+
+   private void OnCollisionEnter (Collision collision)
+   {
+      if (collision.gameObject.CompareTag("Enemy"))
+      {
+         Debug.Log("Player has collided with enemy.");
+      }
+   }
+   private void OnTriggerEnter (Collider other)  
+   {
+      if (other.gameObject.CompareTag("PowerUp"))
+      {
+         Destroy(other.gameObject);
+      }
+   } 
+   
 }
