@@ -21,7 +21,7 @@ public class Target : MonoBehaviour
        
        transform.position = RandomSpawnPos();
        
-    }
+    
 
 
     // Update is called once per frame
@@ -30,7 +30,17 @@ public class Target : MonoBehaviour
         
     }
 
-    private void OnMouseDown
+    Vector3 RandomForce(){ 
+    return Vector3.up * Random.Range(minSpeed, maxSpeed);}
+   
+    float RandomTorque(){ 
+    return Random.Range(-maxTorque, maxTorque);}
+    
+    Vector3 RandomSpawnPos(){ 
+     return new Vector3(Random.Range(-xRange, xRange), ySpawnPos); }
+    }
+
+    private void OnMouseDown()
     {
      Destroy(gameObject);
     }
@@ -40,18 +50,5 @@ public class Target : MonoBehaviour
      Destroy(gameObject);
     }
 
-    Vector3 RandomForce() 
-    {
-     return Vector3.up * Random.Range(minSpeed, maxSpeed);
-    }
-   
-    float RandomTorque() 
-    {
-     return Random.Range(-maxTorque, maxTorque);
-    }
     
-    Vector3 RandomSpawnPos() 
-    {
-     return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
-    }
 }
