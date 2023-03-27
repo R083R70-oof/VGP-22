@@ -249,7 +249,7 @@ MonoBehaviour:
   - {fileID: 177635905967332156, guid: e761f240c27b1814bbe3ac5af0ee754e, type: 3}
   - {fileID: 7796306154616248030, guid: 2254e91512eb48842aed5a3e844ee1e2, type: 3}
   - {fileID: 3775546769792584384, guid: ff1aaa94981a588419f41c6c9852d795, type: 3}
-  - {fileID: 4044062795553141266, guid: 733f9e3e64a90c5488f92fbacc15ad7c, type: 3}
+  - {fileID: 1902926406981984, guid: 666ff701b211d6440b7bd44aa7b3abfa, type: 3}
   scoreText: {fileID: 944356897}
 --- !u!4 &358224851
 Transform:
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score
+  m_text: 'Score:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
