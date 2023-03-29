@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
@@ -11,16 +12,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
+    public GameObject titleScreen;
     private int score;
     public bool isGameActive;
+    public TextMeshProUGUI livesText;
+    private int lives;
 
   // Start is called before the first frame update
   void Start()
  {
-  isGameActive = true;
-  StartCoroutine(SpawnTarget());
-  score = 0;
-  UpdateScore(0);
+  
     
  }
 
@@ -48,13 +49,36 @@ public class GameManager : MonoBehaviour
  }
   public void GameOver()
  {
+  restartButton.gameObject.SetActive(true);
   gameOverText.gameObject.SetActive(true);
   isGameActive = false;
  }
 
  public void RestartGame()
  {
-    restartButton.gameObject.SetActive(true);
+    
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
  }
+
+  public void StartGame(int difficulty)
+  {
+    isGameActive = true;
+    score = 0;
+   spawnRate /= difficulty;
+    StartCoroutine(SpawnTarget());
+    UpdateScore(0);
+    UpdateLives(3);
+
+    titleScreen.gameObject.SetActive(false);
+  } 
+
+  public void UpdateLives(int livesToChange)
+  {
+   lives += livesToChange;
+   livesText.text = "Lives:" + lives;
+   if (lives <= 0)
+   {
+        GameOver();
+   }
+  }
 }
