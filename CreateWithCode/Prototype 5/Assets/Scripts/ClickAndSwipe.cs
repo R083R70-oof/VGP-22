@@ -34,7 +34,11 @@ public class ClickAndSwipe : MonoBehaviour
             swiping = true;
             UpdateComponent();
         }
-
+        else if (Input.GetMouseButtonUp(0))
+        {
+            swiping = false;
+            UpdateComponent();
+        }
         if(swiping)
         {
             UpdateMousePosition();
@@ -44,7 +48,7 @@ public class ClickAndSwipe : MonoBehaviour
 
     void UpdateMousePosition()
     {
-        mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, 10.0f));
+        mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
         transform.position = mousePos;
     }
 
