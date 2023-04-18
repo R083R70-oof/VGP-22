@@ -42,7 +42,7 @@ public class Target : MonoBehaviour
     Vector3 RandomSpawnPos(){ 
      return new Vector3(Random.Range(-xRange, xRange), ySpawnPos); }
     }
-
+  /*
     private void OnMouseDown()
     {
        if(gameManager.isGameActive)
@@ -52,7 +52,7 @@ public class Target : MonoBehaviour
        gameManager.UpdateScore(pointValue);
      }
     }
-
+  */
     private void OnTriggerEnter(Collider other)
     {
      Destroy(gameObject);

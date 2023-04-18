@@ -13,7 +13,7 @@ public class ClickAndSwipe : MonoBehaviour
 
     private bool swiping = false;
     // Start is called before the first frame update
-    void awake()
+    void Awake()
     {
        cam = Camera.main;
        trail = GetComponent<TrailRenderer>();
