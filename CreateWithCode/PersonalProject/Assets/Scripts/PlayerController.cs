@@ -9,24 +9,34 @@ public class PlayerController : MonoBehaviour
     private float forwardInput;
      private Rigidbody playerRb;
      public float gravityModifier;
+     public bool isOnGround = true;
+    public bool gameOver = false;
 
 
-    // Start is called before the first frame update
+    // Start is called before the first frame updat
+
     void Start()
     {
        playerRb = GetComponent<Rigidbody>();
        Physics.gravity *= gravityModifier; 
+       
     }
 
     // Update is called once per frame
     void Update()
-    {
+     {
+      if(Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
+      {
+         playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+         isOnGround = false;
+      }
+      
       horizontalInput = Input.GetAxis("Horizontal");
       forwardInput = Input.GetAxis("Vertical");
       
       if (Input.GetKeyDown(KeyCode.Space))
       {
-         playerRb.AddForce(Vector3.up * 80, ForceMode.Impulse);
+         playerRb.AddForce(Vector3.up * 60, ForceMode.Impulse);
       }
 
        if (Input.GetKeyDown(KeyCode.E))
